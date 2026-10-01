@@ -1,0 +1,13 @@
+{
+  "name": "@cdbkk/ego-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Authenticated proxy routing for isolated ego lite instances",
+  "bin": { "ego-proxy": "cli.mjs" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:browser": "node --test --test-concurrency=1 test/*.e2e.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
