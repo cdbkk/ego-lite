@@ -1,0 +1,27 @@
+name: Proxy socket checks
+
+on:
+  push:
+    branches: [proxy-cloud-work]
+    paths: ['package/ego-proxy/**', '.github/workflows/proxy-checks.yml']
+  pull_request:
+    paths: ['package/ego-proxy/**', '.github/workflows/proxy-checks.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sockets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Test Linux-compatible proxy behavior
+        working-directory: package/ego-proxy
+        run: npm test

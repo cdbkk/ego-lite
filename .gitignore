@@ -79,6 +79,8 @@ browser/
 task/
 test-e2e/
 test/
+!package/ego-proxy/test/
+!package/ego-proxy/test/**
 # Translated skill (local only)
 skills/ego-browser/SKILL.zh.md
 
